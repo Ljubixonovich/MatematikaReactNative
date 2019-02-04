@@ -1,0 +1,4 @@
+export PATH="/home/ljubomir/Android/Sdk/platform-tools":$PATH
+
+react-native run-android
+npm run android
