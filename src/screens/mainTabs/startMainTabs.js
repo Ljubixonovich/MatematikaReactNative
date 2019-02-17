@@ -32,11 +32,7 @@ const startTabs = () => {
           title: 'Matematika 2 grade',
           icon: icon2
         }                 
-      ],
-      appStyle: {
-        navBarTranslucent: true,
-        drawUnderNavBar: true
-      }
+      ]
     });
   });
 };

@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { View, Text, Button, ImageBackground, StyleSheet } from 'react-native';
 
 import backgroundImage from '../../assets/prviraz.png';
-import startMainTabs from '../../screens/mainTabs/startMainTabs';
 
 class MainScreen extends Component { 
   render() {
@@ -10,7 +9,7 @@ class MainScreen extends Component {
       <ImageBackground source={backgroundImage} style={styles.backgroundImage} resizeMode='center'>
         <View>
           <Text>Main screen component</Text>
-          <Button title='go to Main tabs' onPress={startMainTabs} />
+          <Button title='go to Main tabs'  />
         </View>
       </ImageBackground>
     );
