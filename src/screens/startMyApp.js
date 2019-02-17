@@ -15,7 +15,7 @@ const startMyApp = () => {
       Navigation.startSingleScreenApp({
         screen: 
           {
-            screen: 'Matematika.mainScreen',
+            screen: 'Matematika.WelcomeScreen',
             label: 'Matematika',
             title: 'Matematika by Mystic Peanut',
             icon: sources[0]

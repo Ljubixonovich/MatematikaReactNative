@@ -3,15 +3,17 @@ export PATH="/home/ljubomir/Android/Sdk/platform-tools":$PATH
 react-native run-android
 
 
-{
-  screen: 'Matematika.mainScreen',
-  title: 'Matematika by Mystic Peanut'
-}, 
-{
-  screen: 'Matematika.GradeScreen1',
-  title: 'Matematika 1 grade'
-},
-{
-  screen: 'Matematika.GradeScreen2',
-  title: 'Matematika 2 grade'
-}
+screens: [
+  {
+    screen: 'Matematika.WelcomeScreen',
+    title: 'Matematika by Mystic Peanut'
+  }, 
+  {
+    screen: 'Matematika.GradeScreen1',
+    title: 'Matematika 1 grade'
+  },
+  {
+    screen: 'Matematika.GradeScreen2',
+    title: 'Matematika 2 grade'
+  }
+]
