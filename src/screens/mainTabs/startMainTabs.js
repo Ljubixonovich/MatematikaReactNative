@@ -12,28 +12,15 @@ const startTabs = () => {
     Icon.getImageSource(Platform.OS === 'android' ? 'md-share-alt' : 'ios-share', 30),
     Icon.getImageSource(Platform.OS === 'android' ? 'md-menu' : 'ios-menu', 30)
   ]).then(sources => {
-    Navigation.startTabBasedApp({
-      tabs: [
-        {
-          screen: 'Matematika.mainScreen',
-          label: 'Matematika',
-          title: 'Matematika by Mystic Peanut',
-          icon: sources[0]
-        }, 
-        {
-          screen: 'Matematika.GradeScreen1',
-          label: '1 grade',
-          title: 'Matematika 1 grade',
-          icon: icon1
-        },
-        {
-          screen: 'Matematika.GradeScreen2',
-          label: '2 grade',
-          title: 'Matematika 2 grade',
-          icon: icon2
-        }                 
-      ]
-    });
+      Navigation.startSingleScreenApp({
+        screen: 
+          {
+            screen: 'Matematika.mainScreen',
+            label: 'Matematika',
+            title: 'Matematika by Mystic Peanut',
+            icon: sources[0]
+          }     
+      });
   });
 };
 
