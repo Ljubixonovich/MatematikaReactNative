@@ -5,7 +5,7 @@ import MainScreen from './src/screens/main/Main';
 import GradeScreen1 from './src/screens/grade1/grade1';
 import GradeScreen2 from './src/screens/grade2/grade2';
 import configureStore from './src/store/configureStore';
-import startMainTabs from './src/screens/mainTabs/startMainTabs';
+import startMyApp from './src/screens/startMyApp';
 
 const store = configureStore();
 
@@ -20,4 +20,4 @@ Navigation.registerComponent('Matematika.GradeScreen2', () => GradeScreen2, stor
 //   }
 // });
 
- startMainTabs();
+startMyApp();

@@ -2,10 +2,10 @@ import { Navigation } from 'react-native-navigation';
 import{ Platform } from 'react-native';
 
 import Icon from 'react-native-vector-icons/Ionicons';
-import icon1 from '../../assets/1.png';
-import icon2 from '../../assets/2.png';
+import icon1 from '../assets/1.png';
+import icon2 from '../assets/2.png'
 
-const startTabs = () => {
+const startMyApp = () => {
 
   Promise.all([
     Icon.getImageSource(Platform.OS === 'android' ? 'md-map' : 'ios-map', 30),
@@ -24,4 +24,4 @@ const startTabs = () => {
   });
 };
 
-export default startTabs;
+export default startMyApp;
