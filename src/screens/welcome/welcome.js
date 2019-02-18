@@ -58,16 +58,16 @@ class WelcomeScreen extends Component {
       
         <View style={styles.mainContainer}>
           
-          <View style={this.state.viewMode === 'portrait' ? {flex: 1, marginTop: 20, marginBottom: -10 } : {flex: 1, marginTop: 0, marginBottom: -40}}>
+          <View style={this.state.viewMode === 'portrait' ? {flex: 1, marginTop: 10, marginBottom: -20 } : {flex: 1, marginTop: 10, marginBottom: -50}}>
             <Text style={styles.headerText}>Naucimo matematiku kroz igru i zabavu</Text>
           </View>
 
-          <View style={this.state.viewMode === 'portrait' ? {flex: 3} : {flex: 2}}>
+          <View style={this.state.viewMode === 'portrait' ? {flex: 3} : {flex: 1}}>
             <ImageBackground source={backgroundImage} style={styles.backgroundImage} resizeMode='center'>
             </ImageBackground>
           </View>
 
-          <View style={{flex: 1}}>
+          <View style={{flex: 1, marginTop: -20}}>
             <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
               <ButtonWithBackground color='blue' textColor='#fff' onPress={this.goToGrade1} >
                 1. Razred
