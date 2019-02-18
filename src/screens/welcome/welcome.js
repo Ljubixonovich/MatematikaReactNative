@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import { View, Text, Button, ImageBackground, StyleSheet, Platform } from 'react-native';
 
-import backgroundImage from '../../assets/prviraz.png';
+import backgroundImage from '../../media/images/prviraz.png';
 
 class WelcomeScreen extends Component {  
   constructor(props) {
