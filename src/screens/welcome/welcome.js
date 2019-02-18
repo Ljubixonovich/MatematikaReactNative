@@ -1,17 +1,18 @@
 import React, { Component } from 'react';
-import { View, Text, Button, ImageBackground, StyleSheet } from 'react-native';
+
+import { View, Text, Button, ImageBackground, StyleSheet, Platform } from 'react-native';
 
 import backgroundImage from '../../assets/prviraz.png';
 
-class WelcomeScreen extends Component { 
+class WelcomeScreen extends Component {  
   constructor(props) {
     super(props);
   }
 
   goToGrade1 = () => {
-    this.props.navigator.push({
+      this.props.navigator.push({
       screen: 'Matematika.GradeScreen1',
-      title: 'Matematika 1 grade'
+      title: 'Matematika 1 grade'    
     });
   };
 
