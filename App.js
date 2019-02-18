@@ -7,6 +7,8 @@ import WelcomeScreen from './src/screens/welcome/welcome';
 import SideDrawer from './src/screens/sideDrawer/sideDrawer';
 import GradeScreen1 from './src/screens/grade1/grade1';
 import GradeScreen2 from './src/screens/grade2/grade2';
+import GradeScreen3 from './src/screens/grade3/grade3';
+import GradeScreen4 from './src/screens/grade4/grade4';
 
 
 const store = configureStore();
@@ -15,6 +17,8 @@ Navigation.registerComponent('Matematika.WelcomeScreen', () => WelcomeScreen, st
 Navigation.registerComponent('Matematika.SideDrawer', () => SideDrawer, store, Provider);
 Navigation.registerComponent('Matematika.GradeScreen1', () => GradeScreen1, store, Provider);
 Navigation.registerComponent('Matematika.GradeScreen2', () => GradeScreen2, store, Provider);
+Navigation.registerComponent('Matematika.GradeScreen3', () => GradeScreen3, store, Provider);
+Navigation.registerComponent('Matematika.GradeScreen4', () => GradeScreen4, store, Provider);
 
 
 startMyApp();

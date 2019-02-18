@@ -12,7 +12,7 @@ const startMyApp = () => {
         screen: 
           {
             screen: 'Matematika.WelcomeScreen',
-            title: 'Matematika by Mystic Peanut',
+            title: 'Matematika',
             icon: sources[0]
           },
           drawer: {
