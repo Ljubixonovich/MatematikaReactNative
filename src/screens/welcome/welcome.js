@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { View, Text, ImageBackground, StyleSheet, Dimensions } from 'react-native';
 
 import Btn from '../../components/UI/buttons/ButtonWithBackground';
+import HeaderText from '../../components/UI/texts/headerText';
 import backgroundImage from '../../media/images/prviraz.png';
 
 export default class WelcomeScreen extends Component {
@@ -61,9 +62,9 @@ export default class WelcomeScreen extends Component {
                 styles.portraitHeader  : 
                 styles.landscapeHeader}
             >
-               <Text style={styles.headerText}>
+               <HeaderText>
                   Naucimo matematiku kroz igru i zabavu
-               </Text>
+               </HeaderText>
             </View>
 
             <View style={this.state.viewMode === 'portrait' ? 
@@ -143,11 +144,5 @@ const styles = StyleSheet.create({
       flex: 1,
       marginTop: 10, 
    },
-
-   headerText: {
-      fontSize: 28,
-      textAlign: 'center',
-      color: 'blue'
-   }
 });
 
