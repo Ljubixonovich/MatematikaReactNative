@@ -67,8 +67,8 @@ class WelcomeScreen extends Component {
             </View>
 
             <View style={this.state.viewMode === 'portrait' ? 
-               { flex: 3 } 
-               : { flex: 1 }}
+               { flex: 7 } 
+               : { flex: 2 }}
             >
                <ImageBackground 
                   source={backgroundImage} 
@@ -78,7 +78,10 @@ class WelcomeScreen extends Component {
                </ImageBackground>
             </View>
 
-            <View style={{ flex: 1, marginTop: -20 }}>
+            <View style={this.state.viewMode === 'portrait' ? 
+               { flex: 3 } 
+               : { flex: 2 }}
+            >
                <View style={{ 
                   flex: 1, 
                   flexDirection: 'row', 
@@ -133,14 +136,12 @@ const styles = StyleSheet.create({
       flex: 1,
    },
    portraitHeader: {
-      flex: 1,
+      flex: 2,
       marginTop: 10, 
-      marginBottom: -20
    },
    landscapeHeader: {
       flex: 1,
       marginTop: 10, 
-      marginBottom: -60
    },
 
    headerText: {
