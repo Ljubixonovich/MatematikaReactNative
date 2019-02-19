@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { View, Text, Button, ImageBackground, StyleSheet, Dimensions } from 'react-native';
+import { View, Text, ImageBackground, StyleSheet, Dimensions } from 'react-native';
 
 import Btn from '../../components/UI/buttons/ButtonWithBackground';
 import backgroundImage from '../../media/images/prviraz.png';

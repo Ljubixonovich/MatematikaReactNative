@@ -45,14 +45,15 @@ const buttonWithBackground = props => {
 
 const styles = StyleSheet.create({
    button: {
-      padding: 4,
+      paddingTop: 5,
+      paddingBottom: 5,
+      paddingLeft: 10,
+      paddingRight: 10,
       margin: 5,
       borderRadius: 8,
       borderWidth: 1,
       borderColor: 'black',
       opacity: 0.8,
-      width: '32%',
-      minHeight: '80%',
       justifyContent: 'center',
       alignItems: 'center'
    },
