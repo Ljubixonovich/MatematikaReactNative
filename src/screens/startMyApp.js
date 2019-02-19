@@ -3,8 +3,8 @@ import { Platform } from 'react-native';
 
 import Icon from 'react-native-vector-icons/Ionicons';
 
-const startMyApp = () => {
 
+const startMyApp = () => {
    Promise.all([
       Icon.getImageSource(Platform.OS === 'android' ? 'md-menu' : 'ios-menu', 30)
    ]).then(sources => {
@@ -22,7 +22,7 @@ const startMyApp = () => {
          }
       });
    });
-   
+
 };
 
 export default startMyApp;

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { View, Text, Button, Dimensions, StyleSheet } from 'react-native';
 
 
-class SideDrawer extends Component {
+export default class SideDrawer extends Component {
    render() {
       return (
          <View style={[
@@ -33,6 +33,3 @@ const styles = StyleSheet.create({
       marginRight: 10
    }
 });
-
-
-export default SideDrawer;

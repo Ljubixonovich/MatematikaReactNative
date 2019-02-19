@@ -3,13 +3,30 @@ import { View, Text, StyleSheet } from 'react-native';
 
 import Btn from '../../components/UI/buttons/ButtonWithBackground';
 
-class GradeScreen1 extends Component {
+export default class GradeScreen1 extends Component {
    constructor(props) {
       super(props);
    } 
 
-   metoda = () => {
+   goToNovac = () => {
+      this.props.navigator.push({
+         screen: 'Matematika.NovacScreen1',
+         title: 'Novac'
+      });
+   }
 
+   goToRazlika = () => {
+      this.props.navigator.push({
+         screen: 'Matematika.RazlikaScreen1',
+         title: 'Razlike i Sabirci'
+      });
+   }
+
+   goToNepoznatBroj = () => {
+      this.props.navigator.push({
+         screen: 'Matematika.NepoznatBrojScreen1',
+         title: 'Otkrivamo Nepoznat Broj'
+      });
    }
 
   render() {
@@ -18,28 +35,29 @@ class GradeScreen1 extends Component {
         <Btn
             color='blue'
             textColor='#fff'
-            onPress={this.metoda}
-         >1. Tip Igre
+            onPress={this.goToNovac}
+         >Novac
+         </Btn>
+
+         <Btn
+            color='blue'
+            textColor='#fff'
+            onPress={this.goToRazlika}
+         >Razlika
+         </Btn>
+
+         <Btn
+            color='blue'
+            textColor='#fff'
+            onPress={this.goToNepoznatBroj}
+         >Otkrivamo nepoznat broj
          </Btn>
 
          <Btn
             color='blue'
             textColor='#fff'
             onPress={this.metoda}
-         >2. Tip Igre
-         </Btn>
-
-         <Btn
-            color='blue'
-            textColor='#fff'
-            onPress={this.metoda}
-         >3. Tip Igre
-         </Btn>
-
-         <Btn
-            color='blue'
-            textColor='#fff'
-            onPress={this.metoda}
+            disabled={true}
          >4. Tip Igre
          </Btn>
 
@@ -47,6 +65,7 @@ class GradeScreen1 extends Component {
             color='blue'
             textColor='#fff'
             onPress={this.metoda}
+            disabled={true}
          >5. Tip Igre koju igras
          </Btn>
 
@@ -64,6 +83,4 @@ const styles = StyleSheet.create({
    trt: {
       
    }
-})
-
-export default GradeScreen1;
+});

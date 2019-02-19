@@ -10,7 +10,14 @@ screens: [
   }, 
   {
     screen: 'Matematika.GradeScreen1',
-    title: 'Matematika 1 grade'
+    title: 'Matematika 1 grade',
+    tipZadatka: 
+    [
+      {
+         screen: 'Matematika.',
+         title: 'Matematika 1 grade',
+      },
+    ]
   },
   {
     screen: 'Matematika.GradeScreen2',

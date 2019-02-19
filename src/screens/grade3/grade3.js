@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
 
-class GradeScreen3 extends Component {
+export default class GradeScreen3 extends Component {
 
    render() {
       return (
@@ -11,5 +11,3 @@ class GradeScreen3 extends Component {
       );
    }
 }
-
-export default GradeScreen3;

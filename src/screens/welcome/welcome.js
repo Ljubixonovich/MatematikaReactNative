@@ -5,7 +5,7 @@ import { View, Text, ImageBackground, StyleSheet, Dimensions } from 'react-nativ
 import Btn from '../../components/UI/buttons/ButtonWithBackground';
 import backgroundImage from '../../media/images/prviraz.png';
 
-class WelcomeScreen extends Component {
+export default class WelcomeScreen extends Component {
    constructor(props) {
       super(props);
       Dimensions.addEventListener('change', this.updateStyles);
@@ -151,4 +151,3 @@ const styles = StyleSheet.create({
    }
 });
 
-export default WelcomeScreen;
