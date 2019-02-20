@@ -54,6 +54,14 @@ export default class WelcomeScreen extends Component {
       });
    };
 
+   // shortcut for curent work
+   goToWork = () => {
+      this.props.navigator.push({
+         screen: 'Matematika.RazlikaZadatak1Screen1',
+         title: '1. Zadatak'
+      });
+   }
+
    render() {
       return (
 
@@ -93,6 +101,12 @@ export default class WelcomeScreen extends Component {
                      textColor='#fff'
                      onPress={this.goToGrade1}
                   >1. Razred
+                  </Btn>
+                  <Btn
+                     color='red'
+                     textColor='#fff'
+                     onPress={this.goToWork}
+                  >Hey
                   </Btn>
                   <Btn
                      color='blue'

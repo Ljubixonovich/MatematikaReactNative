@@ -20,15 +20,15 @@ export default class RazlikaScreen1 extends Component {
       }); 
    }
 
-   render() {
+   render() {         
       return (
-         <ScrollView>
-            <View style={styles.mainContainer}>
+         <View style={styles.mainContainer}>
+            <View>
+               <HeaderText>Za toliko veci/manji broj</HeaderText>
+               <Text>Nauci da prepoznas za koliko se jedan broj razlikuje od drugog</Text>
+            </View>
+            <View style={{flexDirection: 'row'}}>
                <View>
-                  <HeaderText>Za toliko veci/manji broj</HeaderText>
-                  <Text>Nauci da prepoznas za koliko se jedan broj razlikuje od drugog</Text>
-               </View>
-               <View style={{justifyContent: 'space-evenly'}}>
                   <Btn color='blue' textColor='#fff' onPress={this.goToZadatak1}>
                      1. Zadatak
                   </Btn>
@@ -41,6 +41,8 @@ export default class RazlikaScreen1 extends Component {
                   <Btn color='orange' textColor='#fff' onPress={this.toDo}>
                      4. Zadatak
                   </Btn>
+               </View>
+               <View>
                   <Btn color='orange' textColor='#fff' onPress={this.toDo}>
                      5. Zadatak
                   </Btn>
@@ -54,15 +56,17 @@ export default class RazlikaScreen1 extends Component {
                      8. Zadatak
                   </Btn>
                </View>
-         
-            </View>
-         </ScrollView>
-      )
+            </View>         
+         </View>  
+      );    
    }
 }
 
 const styles = StyleSheet.create({
    mainContainer: {
-     alignItems: 'center',
-   }
+      flex: 1,
+      alignItems: 'center',
+      justifyContent: 'space-evenly',
+   },
 });
+
