@@ -6,6 +6,7 @@ import Ballon from '../../../../components/Ballon/redBallon';
 import backgroundImage from '../../../../media/images/poz_baloni1.png';
 import redBallonImage from '../../../../media/images/redbubble.png';
 import zvezdiceImage from '../../../../media/images/zvezdice.png';
+import transparentImage from '../../../../media/images/transparent.png';
 
 
 class RazlikaZadatak1Screen1 extends Component {
@@ -15,7 +16,26 @@ class RazlikaZadatak1Screen1 extends Component {
    }
 
    state = {
-      viewMode: 'portrait'
+      viewMode: 'portrait',
+      ballon1: {
+         source: redBallonImage
+      },
+      ballon2: {
+         source: redBallonImage
+      },
+      ballon3: {
+         source: redBallonImage
+      },
+      ballon4: {
+         source: redBallonImage
+      },
+      ballon5: {
+         source: redBallonImage
+      },
+      ballon6: {
+         source: redBallonImage
+      },
+      
    }
 
    componentWillUnmount() {
@@ -23,8 +43,13 @@ class RazlikaZadatak1Screen1 extends Component {
    }
 
    updateStyles = dims => {
-      this.setState({
-         viewMode: dims.window.height > 500 ? 'portrait' : 'landscape'
+      this.setState(prevState => {
+         return {
+            ballons: {
+               ...prevState.ballons                            
+            },
+            viewMode: dims.window.height > 500 ? 'portrait' : 'landscape'
+         }
       });
    }
 
@@ -32,7 +57,27 @@ class RazlikaZadatak1Screen1 extends Component {
       return 'Milos je puknuo 5 baloncica. Pomogni Sari da pukne jedan vise od Milosa';
    }
 
-   
+   imageClick = () => {    
+      this.setState(prevState => {
+         return {
+            ...prevState,
+            ballon1: {
+               source: zvezdiceImage
+            }            
+         }
+      });
+      setTimeout(() => {
+         this.setState(prevState => {
+            return {
+               ...prevState,
+               ballon1: {
+                  source: transparentImage
+               }               
+            }
+         });
+      }, 200);
+      
+   }
 
 
    render() {
@@ -46,22 +91,18 @@ class RazlikaZadatak1Screen1 extends Component {
                {flexDirection: 'column', marginLeft: 50} : 
                {flexDirection: 'row', marginTop: 30}]}
             >
-               <Ballon />
-               <Ballon />
-               <Ballon />
-               <Ballon />
-               <Ballon />
+               <Ballon source={this.state.ballon1.source} onPress={this.imageClick}/>
+               <Ballon source={this.state.ballon2.source} onPress={this.imageClick}/>
+               <Ballon source={this.state.ballon3.source} onPress={this.imageClick}/>
             </View>
             <View style={[styles.ballonContainer,
                this.state.viewMode === 'portrait' ?
                {flexDirection: 'column', marginRight: 50} : 
                {flexDirection: 'row', marginBottom: 30}]}
             >
-               <Ballon />
-               <Ballon />
-               <Ballon />
-               <Ballon />
-               <Ballon />
+               <Ballon source={this.state.ballon4.source} onPress={this.imageClick}/>
+               <Ballon source={this.state.ballon5.source} onPress={this.imageClick}/>
+               <Ballon source={this.state.ballon6.source} onPress={this.imageClick}/>
             </View>
             
          </View>

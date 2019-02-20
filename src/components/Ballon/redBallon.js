@@ -1,12 +1,19 @@
-import React from 'react';
-import { Image, StyleSheet } from 'react-native';
+import React, { Component } from 'react';
+import { Image, StyleSheet, TouchableWithoutFeedback } from 'react-native';
 
-import imgRedBallon from '../../media/images/redbubble.png';
 
-const redBallon = props => {
-   return (
-      <Image source={imgRedBallon} style={styles.image} />
-   );
+class redBallon extends Component {
+   constructor(props) {
+      super(props);
+   }
+
+   render(){
+      return (
+         <TouchableWithoutFeedback onPress={this.props.onPress}>
+            <Image source={this.props.source} style={styles.image} />
+         </TouchableWithoutFeedback>
+      );
+   }
 }
 
 const styles = StyleSheet.create({
