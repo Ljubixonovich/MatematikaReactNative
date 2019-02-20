@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { StyleSheet, View, Text, ImageBackground, Dimensions } from 'react-native';
+import { StyleSheet, View, Text, ImageBackground, Dimensions, Button } from 'react-native';
 
+import Ballon from '../../../../components/Ballon/redBallon';
 import backgroundImage from '../../../../media/images/poz_baloni1.png';
 import redBallonImage from '../../../../media/images/redbubble.png';
 import zvezdiceImage from '../../../../media/images/zvezdice.png';
@@ -38,23 +39,29 @@ class RazlikaZadatak1Screen1 extends Component {
       let game = (
          <View style={[styles.gameContainer, 
             this.state.viewMode === 'portrait' ?
-            styles.portraitGameContainer : styles.landscapeGameContainer]}
+            {flexDirection: 'row'} : {flexDirection: 'column'}]}
          >
             <View style={[styles.ballonContainer,
                this.state.viewMode === 'portrait' ?
-               styles.portraitBallonContainer : styles.landscapeBallonContainer
-               ]}
+               {flexDirection: 'column', marginLeft: 50} : 
+               {flexDirection: 'row', marginTop: 30}]}
             >
-               <Text>Baloni</Text>
-               <Text>Baloni</Text>
-               <Text>Baloni</Text>
+               <Ballon />
+               <Ballon />
+               <Ballon />
+               <Ballon />
+               <Ballon />
             </View>
-            <View style={this.state.viewMode === 'portrait' ?
-               styles.portraitBallonContainer : styles.landscapeBallonContainer}
+            <View style={[styles.ballonContainer,
+               this.state.viewMode === 'portrait' ?
+               {flexDirection: 'column', marginRight: 50} : 
+               {flexDirection: 'row', marginBottom: 30}]}
             >
-               <Text>Baloni</Text>
-               <Text>Baloni</Text>
-               <Text>Baloni</Text>
+               <Ballon />
+               <Ballon />
+               <Ballon />
+               <Ballon />
+               <Ballon />
             </View>
             
          </View>
@@ -69,7 +76,7 @@ class RazlikaZadatak1Screen1 extends Component {
             </View>
             {game}
          </ImageBackground>
-      )
+      );
    }
 }
 
@@ -77,39 +84,25 @@ const styles = StyleSheet.create({
    backgroundImage: {
       width: '100%',
       height: '100%',
-      flex: 1,
    },
    gameContainer: {
       flex: 1,
-      alignItems: 'center',
-      justifyContent: 'space-evenly'
-   },
-   portraitGameContainer: {
-      flexDirection: 'row'
-   },
-   landscapeGameContainer: {
-      flexDirection: 'column'
    },
    ballonContainer: {
-      
-   },
-   portraitBallonContainer: {
-      flexDirection: 'column',
-   },
-   landscapeBallonContainer: {
-      flexDirection: 'row'
+      flex: 1,
+      alignItems: 'center',
+      justifyContent: 'space-evenly'
    },
 });
 
 
 
-
 const mapStateToProps = (state) => ({
   
-})
+});
 
 const mapDispatchToProps = {
   
-}
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(RazlikaZadatak1Screen1)
