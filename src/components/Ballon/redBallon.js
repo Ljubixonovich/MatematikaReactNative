@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Image, StyleSheet, TouchableWithoutFeedback } from 'react-native';
+import Sound from 'react-native-sound';
 
 import redBallonImage from '../../media/images/redbubble.png';
 import zvezdiceImage from '../../media/images/zvezdice.png';
@@ -25,6 +26,18 @@ class redBallon extends Component {
 
    ballonPressed = () => {
       if (this.state.source === redBallonImage){
+         Sound.setCategory('Playback');
+
+         let whoosh = new Sound('pop.mp3', Sound.MAIN_BUNDLE, (error) => {
+            if (error) {
+               console.log('failed to load the sound', error);
+            } else {
+              setTimeout(() => {}, 1);
+              whoosh.play();
+            }
+         });
+         setTimeout(() => {            
+         }, 200);
          this.setState(prevState => {
             return {
                ...prevState,
