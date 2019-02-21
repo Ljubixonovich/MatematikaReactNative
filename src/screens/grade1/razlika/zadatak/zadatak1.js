@@ -1,13 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { StyleSheet, View, Text, ImageBackground, Dimensions, Button } from 'react-native';
+import { StyleSheet, View, Text, ImageBackground, Dimensions } from 'react-native';
 
 import Btn from '../../.././../components/UI/buttons/ButtonWithBackground';
 import Ballon from '../../../../components/Ballon/redBallon';
 import backgroundImage from '../../../../media/images/poz_baloni1.png';
-import redBallonImage from '../../../../media/images/redbubble.png';
-import zvezdiceImage from '../../../../media/images/zvezdice.png';
-import transparentImage from '../../../../media/images/transparent.png';
 
 
 class RazlikaZadatak1Screen1 extends Component {
@@ -16,21 +13,36 @@ class RazlikaZadatak1Screen1 extends Component {
       Dimensions.addEventListener('change', this.updateStyles);
    }
 
-   resetGame = () => {
-      this.setState({
-         viewMode: Dimensions.get('window').height > 500 ? 'portrait' : 'landscape',
-         ballonClickedCount: 0,
-      });
-      
-   };
-
    componentWillMount() {
-      this.resetGame();
+      this.init();
    }
 
    componentWillUnmount() {
       Dimensions.removeEventListener('change', this.updateStyles);
    }
+
+   init = () => {
+      this.setState({
+         viewMode: Dimensions.get('window').height > 500 ? 'portrait' : 'landscape',
+         ballonClickedCount: 0,
+      });
+   };
+
+   resetGame = () => {
+      this.init();
+      this.refToBall1.reset();
+      this.refToBall2.reset();
+      this.refToBall3.reset();
+      this.refToBall4.reset();
+      this.refToBall5.reset();
+      this.refToBall6.reset();
+      this.refToBall7.reset();
+      this.refToBall8.reset();
+      this.refToBall9.reset();
+      this.refToBall10.reset();
+      this.refToBall11.reset();
+      this.refToBall12.reset();
+   };
 
    updateStyles = dims => {
       this.setState(prevState => {
@@ -52,9 +64,7 @@ class RazlikaZadatak1Screen1 extends Component {
             ballonClickedCount: prevState.ballonClickedCount + 1         
          }      
       });
-   }
-
-
+   }   
 
 
    render() {
@@ -68,30 +78,54 @@ class RazlikaZadatak1Screen1 extends Component {
                {flexDirection: 'column'} : 
                {flexDirection: 'row'}]}
             >
-               <Ballon onPress={() => this.imageClick(1)} ref={ref => this.lj = ref} />
-               <Ballon onPress={() => this.imageClick(2)}/>
-               <Ballon onPress={() => this.imageClick(3)}/>
-               <Ballon onPress={() => this.imageClick(4)}/>
+               <Ballon onPress={() => this.imageClick(1)} 
+                  ref={ref => (this.refToBall1 = ref)}
+               />
+               <Ballon onPress={() => this.imageClick(2)}
+                  ref={ref => (this.refToBall2 = ref)}
+               />
+               <Ballon onPress={() => this.imageClick(3)}
+                  ref={ref => (this.refToBall3 = ref)}
+               />
+               <Ballon onPress={() => this.imageClick(4)}
+                  ref={ref => (this.refToBall4 = ref)}
+               />
             </View>
             <View style={[styles.ballonContainer,
                this.state.viewMode === 'portrait' ?
                {flexDirection: 'column'} : 
                {flexDirection: 'row'}]}
             >
-               <Ballon onPress={() => this.imageClick(5)}/>
-               <Ballon onPress={() => this.imageClick(6)}/>
-               <Ballon onPress={() => this.imageClick(7)}/>
-               <Ballon onPress={() => this.imageClick(8)}/>
+               <Ballon onPress={() => this.imageClick(5)}
+                  ref={ref => (this.refToBall5 = ref)}
+               />
+               <Ballon onPress={() => this.imageClick(6)}
+                  ref={ref => (this.refToBall6 = ref)}
+               />
+               <Ballon onPress={() => this.imageClick(7)}
+                  ref={ref => (this.refToBall7 = ref)}
+               />
+               <Ballon onPress={() => this.imageClick(8)}
+                  ref={ref => (this.refToBall8 = ref)}
+               />
             </View>
             <View style={[styles.ballonContainer,
                this.state.viewMode === 'portrait' ?
                {flexDirection: 'column'} : 
                {flexDirection: 'row'}]}
             >               
-               <Ballon onPress={() => this.imageClick(9)}/>
-               <Ballon onPress={() => this.imageClick(10)}/>
-               <Ballon onPress={() => this.imageClick(11)}/>
-               <Ballon onPress={() => this.imageClick(12)}/>
+               <Ballon onPress={() => this.imageClick(9)}
+                  ref={ref => (this.refToBall9 = ref)}
+               />
+               <Ballon onPress={() => this.imageClick(10)}
+                  ref={ref => (this.refToBall10 = ref)}
+               />
+               <Ballon onPress={() => this.imageClick(11)}
+                  ref={ref => (this.refToBall11 = ref)}
+               />
+               <Ballon onPress={() => this.imageClick(12)}
+                  ref={ref => (this.refToBall12 = ref)}
+               />
             </View>
             
          </View>
@@ -111,10 +145,10 @@ class RazlikaZadatak1Screen1 extends Component {
             ]}>
                <View style={this.state.viewMode === 'portrait' ? 
                   {flexDirection: 'row', justifyContent:'space-around', alignItems:'center'} : 
-                  {flexDirection: 'column', justifyContent:'space-around', alignItems:'center'}
-               }>  
-                  <Text>Scoore: {this.state.ballonClickedCount}</Text>             
-                  <Btn color='blue' textColor='#fff' onPress={this.resetGame}>Reset</Btn>                  
+                  {flexDirection: 'column-reverse', justifyContent:'space-around', alignItems:'center'}
+               }>                               
+                  <Btn color='blue' textColor='#fff' onPress={this.resetGame}>Reset</Btn>
+                  <Text>Scoore: {this.state.ballonClickedCount}</Text>                    
                </View>
                {game}
             </View>
