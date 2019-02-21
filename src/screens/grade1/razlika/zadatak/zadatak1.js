@@ -431,13 +431,20 @@ class RazlikaZadatak1Screen1 extends Component {
             <View>
                <Text style={{textAlign: 'center'}}>{this.getTaskText()}</Text>
             </View>
-            {/* <View> */}
-               <View style={{flexDirection: 'row', justifyContent:'space-around', alignItems:'center'}}>               
-                  <Btn color='blue' textColor='#fff' onPress={this.resetGame}>Reset</Btn>
-                  <Text>Scoore: {this.state.ballonClickedCount}</Text>
+            <View style={[{flex: 1}, 
+               this.state.viewMode === 'portrait' ?
+               null :
+               {flexDirection: 'row-reverse'}
+            ]}>
+               <View style={this.state.viewMode === 'portrait' ? 
+                  {flexDirection: 'row', justifyContent:'space-around', alignItems:'center'} : 
+                  {flexDirection: 'column', justifyContent:'space-around', alignItems:'center'}
+               }>  
+                  <Text>Scoore: {this.state.ballonClickedCount}</Text>             
+                  <Btn color='blue' textColor='#fff' onPress={this.resetGame}>Reset</Btn>                  
                </View>
                {game}
-            {/* </View> */}
+            </View>
          </ImageBackground>
       );
    }
