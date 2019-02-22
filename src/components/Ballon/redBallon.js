@@ -3,6 +3,7 @@ import { Image, StyleSheet, TouchableWithoutFeedback } from 'react-native';
 import Sound from 'react-native-sound';
 
 import redBallonImage from '../../media/images/redbubble.png';
+import blueBallonImage from '../../media/images/bluebubble.png';
 import zvezdiceImage from '../../media/images/zvezdice.png';
 import transparentImage from '../../media/images/transparent.png';
 
@@ -14,52 +15,53 @@ class redBallon extends Component {
 
    state = {
       ballonPressed: false,
-      source: redBallonImage
+      source: this.props.color === 'red' ? redBallonImage : blueBallonImage
    };
 
    reset = () => {
       this.setState({
          ballonPressed: false,
-         source: redBallonImage
+         source: this.props.color === 'red' ? redBallonImage : blueBallonImage
       });
    }
 
-   ballonPressed = () => {
-      if (this.state.source === redBallonImage){
-         Sound.setCategory('Playback');
-
-         let whoosh = new Sound('pop.mp3', Sound.MAIN_BUNDLE, (error) => {
-            if (error) {
-               console.log('failed to load the sound', error);
-            } else {
-              setTimeout(() => {}, 1);
-              whoosh.play();
-            }
-         });
-         setTimeout(() => {            
-         }, 200);
-         this.setState(prevState => {
-            return {
-               ...prevState,
-               ballonPressed: true, 
-               source: zvezdiceImage                       
-            }
-         }); 
-         setTimeout(() => {
+   onBallonPress = () => {
+      if (this.state.source == transparentImage) {
+         return;
+      }
+      Sound.setCategory('Playback');
+      let whoosh = new Sound('pop.mp3', Sound.MAIN_BUNDLE, (error) => {
+         if (error) {
+            console.log('failed to load the sound', error);
+         } 
+         else {
+            whoosh.play();
+            setTimeout(() => { }, 200);
             this.setState(prevState => {
                return {
                   ...prevState,
-                  source: transparentImage              
+                  ballonPressed: true,
+                  source: zvezdiceImage
                }
             });
-         }, 100);
-         this.props.onPress();       
-      }      
+            setTimeout(() => {
+               this.setState(prevState => {
+                  return {
+                     ...prevState,
+                     source: transparentImage
+                  }
+               });
+            }, 100);
+            this.props.onPress();
+         }
+      });      
    }
 
-   render(){
+
+
+   render() {
       return (
-         <TouchableWithoutFeedback onPress={this.ballonPressed}>
+         <TouchableWithoutFeedback onPress={this.onBallonPress}>
             <Image source={this.state.source} style={styles.image} />
          </TouchableWithoutFeedback>
       );
@@ -70,7 +72,7 @@ const styles = StyleSheet.create({
    image: {
       height: 80,
       width: 80
-    }
+   }
 });
 
 export default redBallon;

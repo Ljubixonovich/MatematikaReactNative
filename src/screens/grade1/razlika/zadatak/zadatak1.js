@@ -78,16 +78,20 @@ class RazlikaZadatak1Screen1 extends Component {
                {flexDirection: 'column'} : 
                {flexDirection: 'row'}]}
             >
-               <Ballon onPress={() => this.imageClick(1)} 
+               <Ballon color='red' 
+                  onPress={() => this.imageClick(1)} 
                   ref={ref => (this.refToBall1 = ref)}
                />
-               <Ballon onPress={() => this.imageClick(2)}
+               <Ballon color='red' 
+                  onPress={() => this.imageClick(2)}
                   ref={ref => (this.refToBall2 = ref)}
                />
-               <Ballon onPress={() => this.imageClick(3)}
+               <Ballon color='red' 
+                  onPress={() => this.imageClick(3)}
                   ref={ref => (this.refToBall3 = ref)}
                />
-               <Ballon onPress={() => this.imageClick(4)}
+               <Ballon color='red' 
+                  onPress={() => this.imageClick(4)}
                   ref={ref => (this.refToBall4 = ref)}
                />
             </View>
@@ -96,16 +100,20 @@ class RazlikaZadatak1Screen1 extends Component {
                {flexDirection: 'column'} : 
                {flexDirection: 'row'}]}
             >
-               <Ballon onPress={() => this.imageClick(5)}
+               <Ballon color='blue' 
+                  onPress={() => this.imageClick(5)}
                   ref={ref => (this.refToBall5 = ref)}
                />
-               <Ballon onPress={() => this.imageClick(6)}
+               <Ballon color='blue' 
+                  onPress={() => this.imageClick(6)}
                   ref={ref => (this.refToBall6 = ref)}
                />
-               <Ballon onPress={() => this.imageClick(7)}
+               <Ballon color='blue' 
+                  onPress={() => this.imageClick(7)}
                   ref={ref => (this.refToBall7 = ref)}
                />
-               <Ballon onPress={() => this.imageClick(8)}
+               <Ballon color='blue' 
+                  onPress={() => this.imageClick(8)}
                   ref={ref => (this.refToBall8 = ref)}
                />
             </View>
@@ -114,16 +122,20 @@ class RazlikaZadatak1Screen1 extends Component {
                {flexDirection: 'column'} : 
                {flexDirection: 'row'}]}
             >               
-               <Ballon onPress={() => this.imageClick(9)}
+               <Ballon color='red' 
+                  onPress={() => this.imageClick(9)}
                   ref={ref => (this.refToBall9 = ref)}
                />
-               <Ballon onPress={() => this.imageClick(10)}
+               <Ballon color='red' 
+                  onPress={() => this.imageClick(10)}
                   ref={ref => (this.refToBall10 = ref)}
                />
-               <Ballon onPress={() => this.imageClick(11)}
+               <Ballon color='red' 
+                  onPress={() => this.imageClick(11)}
                   ref={ref => (this.refToBall11 = ref)}
                />
-               <Ballon onPress={() => this.imageClick(12)}
+               <Ballon color='red' 
+                  onPress={() => this.imageClick(12)}
                   ref={ref => (this.refToBall12 = ref)}
                />
             </View>
