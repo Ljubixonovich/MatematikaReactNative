@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { StyleSheet, View, Text, ImageBackground, Dimensions } from 'react-native';
 
 import Btn from '../../.././../components/UI/buttons/ButtonWithBackground';
-import Ballon from '../../../../components/Ballon/redBallon';
+import Ballon from '../../../../components/Ballon/ballon';
 import backgroundImage from '../../../../media/images/poz_baloni1.png';
 import menuImage from '../../../../media/images/menu.png';
 
@@ -11,25 +11,18 @@ import menuImage from '../../../../media/images/menu.png';
 class RazlikaZadatak1Screen1 extends Component {
    static navigatorButtons = {
       rightButtons: [
-        {
-         // title: 'Options', 
-         id: 'menu', // id for this button, given in onNavigatorEvent(event) to help understand which button was clicked
-        //  disabled: true, 
-         buttonColor: 'orange',
-         icon: menuImage
+         {
+            //titile: 'menu',
+            id: 'menu',
+            buttonColor: 'orange',
+            icon: menuImage
          }
-      ],
-      fab: {
-         collapsedId: 'ljFab',
-         collapsedIcon: menuImage,
-         collapsedIconColor: 'red', // optional
-         backgroundColor: 'blue'
-       }
+      ]
    };
    static navigatorStyle = {
-     // navBarBackgroundColor: 'gold'
-    };
-   
+      // navBarBackgroundColor: 'gold'
+   };
+
    constructor(props) {
       super(props);
       Dimensions.addEventListener('change', this.updateStyles);
@@ -38,14 +31,11 @@ class RazlikaZadatak1Screen1 extends Component {
 
    onNavigatorEvent(event) {
       if (event.type == 'NavBarButtonPress') {
-        if (event.id == 'menu') { 
-          alert('Meni Opcije');
-        }
-        if (event.id == 'ljFab') {
-           alert('fab');
-        }
+         if (event.id == 'menu') {
+            alert('Meni Opcije');
+         }
       }
-    }
+   }
 
    componentWillMount() {
       this.init();
@@ -91,89 +81,89 @@ class RazlikaZadatak1Screen1 extends Component {
       return 'Milos je puknuo 5 baloncica. Pomogni Sari da pukne jedan vise od Milosa';
    }
 
-   imageClick = (id) => { 
+   imageClick = () => {
       this.setState(prevState => {
          return {
             ...prevState,
-            ballonClickedCount: prevState.ballonClickedCount + 1         
-         }      
+            ballonClickedCount: prevState.ballonClickedCount + 1
+         }
       });
-   }   
+   }
 
 
    render() {
       let game = (
-         <View style={[styles.gameContainer, 
-            this.state.viewMode === 'portrait' ?
-            {flexDirection: 'row'} : {flexDirection: 'column'}]}
+         <View style={[styles.gameContainer,
+         this.state.viewMode === 'portrait' ?
+            { flexDirection: 'row' } : { flexDirection: 'column' }]}
          >
             <View style={[styles.ballonContainer,
-               this.state.viewMode === 'portrait' ?
-               {flexDirection: 'column'} : 
-               {flexDirection: 'row'}]}
+            this.state.viewMode === 'portrait' ?
+               { flexDirection: 'column' } :
+               { flexDirection: 'row' }]}
             >
-               <Ballon color='red' 
-                  onPress={() => this.imageClick(1)} 
+               <Ballon color='red'
+                  onPress={this.imageClick}
                   ref={ref => (this.refToBall1 = ref)}
                />
-               <Ballon color='red' 
-                  onPress={() => this.imageClick(2)}
+               <Ballon color='red'
+                  onPress={this.imageClick}
                   ref={ref => (this.refToBall2 = ref)}
                />
-               <Ballon color='red' 
-                  onPress={() => this.imageClick(3)}
+               <Ballon color='red'
+                  onPress={this.imageClick}
                   ref={ref => (this.refToBall3 = ref)}
                />
-               <Ballon color='red' 
-                  onPress={() => this.imageClick(4)}
+               <Ballon color='red'
+                  onPress={this.imageClick}
                   ref={ref => (this.refToBall4 = ref)}
                />
             </View>
             <View style={[styles.ballonContainer,
-               this.state.viewMode === 'portrait' ?
-               {flexDirection: 'column'} : 
-               {flexDirection: 'row'}]}
+            this.state.viewMode === 'portrait' ?
+               { flexDirection: 'column' } :
+               { flexDirection: 'row' }]}
             >
-               <Ballon color='blue' 
-                  onPress={() => this.imageClick(5)}
+               <Ballon color='blue'
+                  onPress={this.imageClick}
                   ref={ref => (this.refToBall5 = ref)}
                />
-               <Ballon color='blue' 
-                  onPress={() => this.imageClick(6)}
+               <Ballon color='blue'
+                  onPress={this.imageClick}
                   ref={ref => (this.refToBall6 = ref)}
                />
-               <Ballon color='blue' 
-                  onPress={() => this.imageClick(7)}
+               <Ballon color='blue'
+                  onPress={this.imageClick}
                   ref={ref => (this.refToBall7 = ref)}
                />
-               <Ballon color='blue' 
-                  onPress={() => this.imageClick(8)}
+               <Ballon color='blue'
+                  onPress={this.imageClick}
                   ref={ref => (this.refToBall8 = ref)}
                />
             </View>
             <View style={[styles.ballonContainer,
-               this.state.viewMode === 'portrait' ?
-               {flexDirection: 'column'} : 
-               {flexDirection: 'row'}]}
-            >               
-               <Ballon color='red' 
-                  onPress={() => this.imageClick(9)}
+            this.state.viewMode === 'portrait' ?
+               { flexDirection: 'column' } :
+               { flexDirection: 'row' }]}
+            >
+               <Ballon color='red'
+                  onPress={this.imageClick}
                   ref={ref => (this.refToBall9 = ref)}
                />
-               <Ballon color='red' 
-                  onPress={() => this.imageClick(10)}
+               <Ballon color='red'
+                  onPress={this.imageClick}
                   ref={ref => (this.refToBall10 = ref)}
                />
-               <Ballon color='red' 
-                  onPress={() => this.imageClick(11)}
+               <Ballon color='red'
+                  onPress={this.imageClick}
                   ref={ref => (this.refToBall11 = ref)}
                />
-               <Ballon color='red' 
-                  onPress={() => this.imageClick(12)}
+               <Ballon color='red'
+                  onPress={this.imageClick}
                   ref={ref => (this.refToBall12 = ref)}
                />
             </View>
-            
+
          </View>
       );
       return (
@@ -182,19 +172,19 @@ class RazlikaZadatak1Screen1 extends Component {
             style={styles.backgroundImage}
          >
             <View>
-               <Text style={{textAlign: 'center'}}>{this.getTaskText()}</Text>
+               <Text style={{ textAlign: 'center' }}>{this.getTaskText()}</Text>
             </View>
-            <View style={[{flex: 1}, 
-               this.state.viewMode === 'portrait' ?
+            <View style={[{ flex: 1 },
+            this.state.viewMode === 'portrait' ?
                null :
-               {flexDirection: 'row-reverse'}
+               { flexDirection: 'row-reverse' }
             ]}>
-               <View style={this.state.viewMode === 'portrait' ? 
-                  {flexDirection: 'row', justifyContent:'space-around', alignItems:'center'} : 
-                  {flexDirection: 'column-reverse', justifyContent:'space-around', alignItems:'center'}
-               }>                               
+               <View style={this.state.viewMode === 'portrait' ?
+                  { flexDirection: 'row', justifyContent: 'space-around', alignItems: 'center' } :
+                  { flexDirection: 'column-reverse', justifyContent: 'space-around', alignItems: 'center' }
+               }>
                   <Btn color='blue' textColor='#fff' onPress={this.resetGame}>Reset</Btn>
-                  <Text>Scoore: {this.state.ballonClickedCount}</Text>            
+                  <Text>Scoore: {this.state.ballonClickedCount}</Text>
                </View>
                {game}
             </View>
@@ -221,11 +211,11 @@ const styles = StyleSheet.create({
 
 
 const mapStateToProps = (state) => ({
-  
+
 });
 
 const mapDispatchToProps = {
-  
+
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(RazlikaZadatak1Screen1)

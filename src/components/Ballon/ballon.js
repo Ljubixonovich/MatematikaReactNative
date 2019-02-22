@@ -8,7 +8,7 @@ import zvezdiceImage from '../../media/images/zvezdice.png';
 import transparentImage from '../../media/images/transparent.png';
 
 
-class redBallon extends Component {
+class ballon extends Component {
    constructor(props) {
       super(props);
    }
@@ -75,4 +75,4 @@ const styles = StyleSheet.create({
    }
 });
 
-export default redBallon;
+export default ballon;
