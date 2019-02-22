@@ -19,6 +19,9 @@ const startMyApp = () => {
             left: {
                screen: 'Matematika.SideDrawer'
             }
+         },
+         appStyle: {
+            navBarTitleTextCentered: true
          }
       });
    });

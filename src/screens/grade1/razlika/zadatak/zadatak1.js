@@ -5,13 +5,47 @@ import { StyleSheet, View, Text, ImageBackground, Dimensions } from 'react-nativ
 import Btn from '../../.././../components/UI/buttons/ButtonWithBackground';
 import Ballon from '../../../../components/Ballon/redBallon';
 import backgroundImage from '../../../../media/images/poz_baloni1.png';
+import menuImage from '../../../../media/images/menu.png';
 
 
 class RazlikaZadatak1Screen1 extends Component {
+   static navigatorButtons = {
+      rightButtons: [
+        {
+         // title: 'Options', 
+         id: 'menu', // id for this button, given in onNavigatorEvent(event) to help understand which button was clicked
+        //  disabled: true, 
+         buttonColor: 'orange',
+         icon: menuImage
+         }
+      ],
+      fab: {
+         collapsedId: 'ljFab',
+         collapsedIcon: menuImage,
+         collapsedIconColor: 'red', // optional
+         backgroundColor: 'blue'
+       }
+   };
+   static navigatorStyle = {
+     // navBarBackgroundColor: 'gold'
+    };
+   
    constructor(props) {
       super(props);
       Dimensions.addEventListener('change', this.updateStyles);
+      this.props.navigator.setOnNavigatorEvent(this.onNavigatorEvent);
    }
+
+   onNavigatorEvent(event) {
+      if (event.type == 'NavBarButtonPress') {
+        if (event.id == 'menu') { 
+          alert('Meni Opcije');
+        }
+        if (event.id == 'ljFab') {
+           alert('fab');
+        }
+      }
+    }
 
    componentWillMount() {
       this.init();
@@ -160,7 +194,7 @@ class RazlikaZadatak1Screen1 extends Component {
                   {flexDirection: 'column-reverse', justifyContent:'space-around', alignItems:'center'}
                }>                               
                   <Btn color='blue' textColor='#fff' onPress={this.resetGame}>Reset</Btn>
-                  <Text>Scoore: {this.state.ballonClickedCount}</Text>                    
+                  <Text>Scoore: {this.state.ballonClickedCount}</Text>            
                </View>
                {game}
             </View>
