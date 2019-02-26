@@ -72,8 +72,9 @@ class RazlikaZadatak1Screen1 extends Component {
          viewMode: Dimensions.get('window').height > 500 ? 'portrait' : 'landscape',
          ballonClickedCount: 0,
          ballons: ballons,
-         correctResult: task.correctResult,
-         taskText: task.taskText
+         taskText: task.taskText,
+         helpText: task.helpText,
+         correctResult: task.correctResult         
       });
    };
    
