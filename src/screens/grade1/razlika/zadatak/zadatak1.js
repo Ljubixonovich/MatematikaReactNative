@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { StyleSheet, View, Text, ImageBackground, Dimensions, FlatList } from 'react-native';
 import Sound from 'react-native-sound';
 
-import { GetQuest } from './quests';
+import { substractQuest1, addQuest1 } from '../../../../quests/textual1Level';
 import Btn from '../../.././../components/UI/buttons/ButtonWithBackground';
 import Ballon from '../../../../components/Ballon/ballon';
 import backgroundImage from '../../../../media/images/poz_baloni1.png';
@@ -67,7 +67,8 @@ class RazlikaZadatak1Screen1 extends Component {
       for (let index = 0; index < numbersOfBallons; index++) {
          ballons.push({id: index + 1, source: blueBallonImage});         
       }
-      let task = GetQuest();
+     //  let task = addQuest1();
+      let task = substractQuest1();
       this.setState({
          viewMode: Dimensions.get('window').height > 500 ? 'portrait' : 'landscape',
          ballonClickedCount: 0,
@@ -78,7 +79,18 @@ class RazlikaZadatak1Screen1 extends Component {
       });
    };
    
-   checkForTask = () => {
+   checkForCorrectResult = () => {
+      // let ballonsStillALive = this.state.ballons.length - this.state.ballonClickedCount;
+      // alert(ballonsStillALive);
+
+      // if (ballonsStillALive < this.state.correctResult) {
+      //    return;
+      // } else if (this.ballonsStillALive === this.state.correctResult) {
+      //    alert('Bravo !!!');
+      // } else {
+      //    alert('Not correct. Please, try again.');
+      // }
+
       if (this.state.ballonClickedCount < this.state.correctResult) {
          return;
       } else if (this.state.ballonClickedCount === this.state.correctResult) {
@@ -105,7 +117,7 @@ class RazlikaZadatak1Screen1 extends Component {
       }
       clearTimeout(this.taskTimeout);
       this.taskTimeout = setTimeout(() => {
-         this.checkForTask();
+         this.checkForCorrectResult();
       }, 3000);
       this.popBallonSound.play();
       ballon.source = zvezdiceImage;
@@ -137,7 +149,7 @@ class RazlikaZadatak1Screen1 extends Component {
             style={styles.backgroundImage}
          >
             <View>
-               <Text style={{ textAlign: 'center' }}>
+               <Text style={{ textAlign: 'center', fontSize: 20 }}>
                   {this.state.taskText}
                </Text>
             </View>

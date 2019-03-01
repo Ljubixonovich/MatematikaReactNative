@@ -1,46 +1,16 @@
-
-const tasks = [
-   {
-      taskText: '',
-      helpText: '2 + 3',
-      correctResult: 5
-   },
-   {
-      taskText: '',
-      helpText: '1 + 2',
-      correctResult: 3
-   },
-   {
-      taskText: '',
-      helpText: '5 - 2',
-      correctResult: 3
-   },
-   {
-      taskText: '',
-      helpText: '7 - 4',
-      correctResult: 3
-   },
-   {
-      taskText: '',
-      helpText: '9 - 1',
-      correctResult: 8
-   }
-];
-
-
-
-const serbianNames = [
-   // { 
+export const serbianNames = [
+   // {  male: true, female: false
    //    nomin: 'ko-sta    ',
    //    genit: 'koga-cega    idem od...',
    //    dativ: 'kome-cemu    dacu to...',
    //    akuz: 'koga-sta      volim...',
    //    vokat: 'oj-ej     ',
    //    instr: 's kim/s cime    ',
-   //    lokat: 'o kome/o cemu     ...pricamo '
+   //    lokat: 'o kome/o cemu   pricamo o ... '
    // },
 
    // { 
+   //    male: ,
    //    nomin: '',
    //    genit: '',
    //    dativ: '',
@@ -50,6 +20,7 @@ const serbianNames = [
    //    lokat: ''
    // },
    { 
+      male: false,
       nomin: 'Ana',
       genit: 'Ane',
       dativ: 'Ani',
@@ -59,6 +30,7 @@ const serbianNames = [
       lokat: 'Ani'
    },
    { 
+      male: false,
       nomin: 'Anja',
       genit: 'Anje',
       dativ: 'Anji',
@@ -68,6 +40,7 @@ const serbianNames = [
       lokat: 'Anji'
    },
    { 
+      male: true,
       nomin: 'Aca',
       genit: 'Ace',
       dativ: 'Aci',
@@ -77,6 +50,7 @@ const serbianNames = [
       lokat: 'Aci'
    }, 
    { 
+      male: false,
       nomin: 'Vesna',
       genit: 'Vesne',
       dativ: 'Vesni',
@@ -86,6 +60,7 @@ const serbianNames = [
       lokat: 'Vesni'
    },
    { 
+      male: true,
       nomin: 'Viktor',
       genit: 'Viktora',
       dativ: 'Viktoru',
@@ -95,6 +70,7 @@ const serbianNames = [
       lokat: 'Viktoru'
    },
    { 
+      male: true,
       nomin: 'Vuk',
       genit: 'Vuka',
       dativ: 'Vuku',
@@ -104,6 +80,7 @@ const serbianNames = [
       lokat: 'Vuku'
    }, 
    { 
+      male: false,
       nomin: 'Goga',
       genit: 'Goge',
       dativ: 'Gogi',
@@ -113,6 +90,7 @@ const serbianNames = [
       lokat: 'Gogi'
    },
    { 
+      male: false,
       nomin: 'Dunja',
       genit: 'Dunje',
       dativ: 'Dunji',
@@ -122,6 +100,7 @@ const serbianNames = [
       lokat: 'Dunji'
    },
    { 
+      male: true,
       nomin: 'Žarko',
       genit: 'Žarka',
       dativ: 'Žarku',
@@ -131,6 +110,7 @@ const serbianNames = [
       lokat: 'Žarku'
    },
    { 
+      male: true,
       nomin: 'Igor',
       genit: 'Igora',
       dativ: 'Igoru',
@@ -140,6 +120,7 @@ const serbianNames = [
       lokat: 'Igoru'
    },
    { 
+      male: false,
       nomin: 'Jasna',
       genit: 'Jasne',
       dativ: 'Jasni',
@@ -149,6 +130,7 @@ const serbianNames = [
       lokat: 'Jasni'
    },
    { 
+      male: true,
       nomin: 'Lazar',
       genit: 'Lazara',
       dativ: 'Lazaru',
@@ -158,6 +140,7 @@ const serbianNames = [
       lokat: 'Lazaru'
    },
    { 
+      male: true,
       nomin: 'Luka',
       genit: 'Luke',
       dativ: 'Luki',
@@ -167,6 +150,7 @@ const serbianNames = [
       lokat: 'Luki'
    },
    { 
+      male: true,
       nomin: 'Ljuba',
       genit: 'Ljube',
       dativ: 'Ljubi',
@@ -176,6 +160,7 @@ const serbianNames = [
       lokat: 'Ljubi'
    },
    { 
+      male: true,
       nomin: 'Marko',
       genit: 'Marka',
       dativ: 'Marku',
@@ -185,6 +170,7 @@ const serbianNames = [
       lokat: 'Marku'
    },
    { 
+      male: false,
       nomin: 'Marta',
       genit: 'Marte',
       dativ: 'Marti',
@@ -194,6 +180,7 @@ const serbianNames = [
       lokat: 'Marti'
    },
    { 
+      male: false,
       nomin: 'Milica',
       genit: 'Milice',
       dativ: 'Milici',
@@ -203,6 +190,7 @@ const serbianNames = [
       lokat: 'Milici'
    },
    { 
+      male: true,
       nomin: 'Nikola',
       genit: 'Nikole',
       dativ: 'Nikoli',
@@ -212,6 +200,7 @@ const serbianNames = [
       lokat: 'Nikoli'
    },
    { 
+      male: true,
       nomin: 'Pavle',
       genit: 'Pavla',
       dativ: 'Pavlu',
@@ -221,6 +210,7 @@ const serbianNames = [
       lokat: 'Pavlu'
    },
    { 
+      male: true,
       nomin: 'Petar',
       genit: 'Petra',
       dativ: 'Petru',
@@ -230,15 +220,17 @@ const serbianNames = [
       lokat: 'Petru'
    },
    { 
+      male: false,
       nomin: 'Petra',
       genit: 'Petre',
       dativ: 'Petri',
       akuz: 'Petru',
       vokat: 'Petra',
       instr: 'Petrom',
-      lokat: 'Petru'
+      lokat: 'Petri'
    },
    { 
+      male: false,
       nomin: 'Sara',
       genit: 'Sare',
       dativ: 'Sari',
@@ -248,6 +240,7 @@ const serbianNames = [
       lokat: 'Sari'
    },
    { 
+      male: false,
       nomin: 'Sofija',
       genit: 'Sofije',
       dativ: 'Sofiji',
@@ -257,6 +250,7 @@ const serbianNames = [
       lokat: 'Sofiji'
    },
    { 
+      male: true,
       nomin: 'Stevan',
       genit: 'Stevana',
       dativ: 'Stevanu',
@@ -266,6 +260,7 @@ const serbianNames = [
       lokat: 'Stevanu'
    },
    { 
+      male: true,
       nomin: 'Stefan',
       genit: 'Stefana',
       dativ: 'Stefanu',
@@ -276,6 +271,7 @@ const serbianNames = [
    }, 
   
    { 
+      male: true,
       nomin: 'Filip',
       genit: 'Filipa',
       dativ: 'Filipu',
@@ -285,26 +281,3 @@ const serbianNames = [
       lokat: 'Filipu'
    } 
 ];
-
-export const GetQuest = () => {   
-   const name1 = serbianNames[Math.floor(Math.random() * serbianNames.length)];
-
-   const serbianNamesReduced = serbianNames.filter(n => n.nomin != name1.nomin);
-   const name2 = serbianNamesReduced[Math.floor(Math.random() * serbianNamesReduced.length)];
-   
-   const number1 = Math.floor(Math.random() * 12); 
-   const number2 = Math.floor(Math.random() * (13 - number1));
-
-   let taskText = name1.nomin + ' ima ' + number1 + (number1 === 1 ? ' kliker' : ' klikera') + '. ' + 
-      name2.nomin + ' ima ' + number2 + (number2 === 1 ? ' kliker' : ' klikera') +
-      '. Koliko ' + name1.nomin + ' i ' + name2.nomin + ' imaju zajedno klikera?';
-   let correctResult = number1 + number2;
-   let helpText = number1 + ' + ' + number2;
-
-   return {
-      taskText: taskText,
-      helpText: helpText,
-      correctResult: correctResult
-   };
-
-}
