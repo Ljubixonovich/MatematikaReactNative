@@ -49,13 +49,14 @@ const styles = StyleSheet.create({
       paddingBottom: 5,
       paddingLeft: 10,
       paddingRight: 10,
-      margin: 5,
+      margin: 8,
       borderRadius: 8,
       borderWidth: 1,
       borderColor: 'black',
       opacity: 0.8,
       justifyContent: 'center',
-      alignItems: 'center'
+      alignItems: 'center',
+      height: 48
    },
    disabled: {
       backgroundColor: '#eee',
