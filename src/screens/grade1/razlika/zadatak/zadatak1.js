@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { StyleSheet, View, Text, ImageBackground, Dimensions, FlatList } from 'react-native';
 import Sound from 'react-native-sound';
+import Icons from 'react-native-vector-icons/Ionicons';
 
 import { substractQuest1, addQuest1 } from '../../../../quests/textual1Level';
 import Btn from '../../.././../components/UI/buttons/ButtonWithBackground';
@@ -15,33 +16,26 @@ import transparentImage from '../../../../media/images/transparent.png';
 
 
 class RazlikaZadatak1Screen1 extends Component {
-
-   // Navigation
-   static navigatorButtons = {
-      rightButtons: [
-         {
-            //titile: 'menu',
-            id: 'menu',
-            buttonColor: 'orange',
-            icon: menuImage
-         }
-      ]
-   };
-   static navigatorStyle = {
-      // navBarBackgroundColor: 'gold'
-   };   
-   onNavigatorEvent(event) {
-      if (event.type == 'NavBarButtonPress') {
-         if (event.id == 'menu') {
-            alert('Meni Opcije');
-         }
-      }
+   componentDidMount() {
+      Icons.getImageSource('md-more', 30).then((sources) => {
+         this.props.navigator.setButtons({
+            rightButtons: [
+               { 
+                  id: 'menu', 
+                  component: 'Matematika.PopupMenu', 
+                  passProps: {
+                     actions: ['asd', 'qwe'],
+                     onPress: this.menuHandler
+                  }
+               }
+            ]
+        });        
+     });
    }
 
    constructor(props) {
       super(props);
       Dimensions.addEventListener('change', this.updateStyles);
-      this.props.navigator.setOnNavigatorEvent(this.onNavigatorEvent);
    } 
 
    componentWillMount() {
@@ -77,6 +71,10 @@ class RazlikaZadatak1Screen1 extends Component {
          helpText: task.helpText,
          correctResult: task.correctResult         
       });
+   };
+
+   menuHandler = (a, b) => {
+      alert(this.state.taskText);
    };
    
    checkForCorrectResult = () => {

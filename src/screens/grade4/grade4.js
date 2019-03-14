@@ -5,7 +5,6 @@ import Icons from 'react-native-vector-icons/Ionicons';
 export default class GradeScreen4 extends Component {   
    constructor(props) {
       super(props);
-      this.props.navigator.setOnNavigatorEvent(this.onNavigatorEvent);
    }
 
    componentDidMount() {
@@ -25,31 +24,23 @@ export default class GradeScreen4 extends Component {
      });
    }
 
-   onNavigatorEvent(event) {
-      if (event.type == 'NavBarButtonPress') {
-         if (event.id == 'menu') {
-           // alert('Meni Opcije');
-         }
-      }
+   handlerPopup0 = () => {
+      alert('popup 0');
    }
 
-   lj0 = () => {
-      alert('lj 0');
-   }
-
-   lj1 = () => {
-      alert('lj 1');
+   handlerPopup1 = () => {
+      alert('popup 1');
    } 
 
    menuHandler = (a, b) => {
       // a = 'itemSelected';
       // b = 0;
       if (b === 0) {
-         this.lj0();
+         this.handlerPopup0();
       } else {
-         this.lj1();
+         this.handlerPopup1();
       }
-   }
+   };
 
 
    render() {
