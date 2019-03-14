@@ -17,6 +17,8 @@ import RazlikaScreen1 from './src/screens/grade1/razlika/razlika';
 
 import RazlikaZadatak1Screen1 from './src/screens/grade1/razlika/zadatak/zadatak1';
 
+import PopupMenu from './src/components/PopupMenu/PopupMenu';
+
 
 const store = configureStore();
 
@@ -31,6 +33,8 @@ Navigation.registerComponent('Matematika.RazlikaZadatak1Screen1', () => RazlikaZ
 Navigation.registerComponent('Matematika.GradeScreen2', () => GradeScreen2, store, Provider);
 Navigation.registerComponent('Matematika.GradeScreen3', () => GradeScreen3, store, Provider);
 Navigation.registerComponent('Matematika.GradeScreen4', () => GradeScreen4, store, Provider);
+
+Navigation.registerComponent('Matematika.PopupMenu', () => PopupMenu, store, Provider);
 
 
 startMyApp();
