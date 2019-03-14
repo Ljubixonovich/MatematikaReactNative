@@ -59,10 +59,11 @@ export default class PopupMenu extends Component {
 const styles = StyleSheet.create({
    button: {
       overflow: 'hidden',
-    width: 34,
-    height: 34,
-    borderRadius: 34 / 2,
-    justifyContent: 'center',
-    alignItems: 'center',
+      marginTop: 8,
+      width: 34,
+      height: 34,
+      borderRadius: 34 / 2,
+      justifyContent: 'center',
+      alignItems: 'center',
    }
 })
