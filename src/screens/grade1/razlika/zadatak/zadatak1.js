@@ -8,7 +8,6 @@ import { substractQuest1, addQuest1 } from '../../../../quests/textual1Level';
 import Btn from '../../.././../components/UI/buttons/ButtonWithBackground';
 import Ballon from '../../../../components/Ballon/ballon';
 import backgroundImage from '../../../../media/images/poz_baloni1.png';
-import menuImage from '../../../../media/images/menu.png';
 
 import blueBallonImage from '../../../../media/images/bluebubble.png';
 import zvezdiceImage from '../../../../media/images/zvezdice.png';
@@ -17,19 +16,20 @@ import transparentImage from '../../../../media/images/transparent.png';
 
 class RazlikaZadatak1Screen1 extends Component {
    componentDidMount() {
-      Icons.getImageSource('md-more', 30).then((sources) => {
+         Icons.getImageSource('md-more', 30).then((sources) => {
          this.props.navigator.setButtons({
             rightButtons: [
                { 
                   id: 'menu', 
                   component: 'Matematika.PopupMenu', 
                   passProps: {
-                     actions: ['asd', 'qwe'],
+                     actions: ['tekst zadatka', 'pomoc'],
                      onPress: this.menuHandler
                   }
                }
             ]
-        });        
+        });
+        alert(this.state.taskText);        
      });
    }
 
@@ -61,7 +61,7 @@ class RazlikaZadatak1Screen1 extends Component {
       for (let index = 0; index < numbersOfBallons; index++) {
          ballons.push({id: index + 1, source: blueBallonImage});         
       }
-     //  let task = addQuest1();
+      // let task = addQuest1();
       let task = substractQuest1();
       this.setState({
          viewMode: Dimensions.get('window').height > 500 ? 'portrait' : 'landscape',
@@ -70,11 +70,22 @@ class RazlikaZadatak1Screen1 extends Component {
          taskText: task.taskText,
          helpText: task.helpText,
          correctResult: task.correctResult         
-      });
+      });      
    };
 
+   reset = () => {
+      this.init();
+      setTimeout(() => {
+         alert(this.state.taskText);
+      }, 1);      
+   }
+
    menuHandler = (a, b) => {
-      alert(this.state.taskText);
+      if (b === 0) {
+         alert(this.state.taskText);
+      } else {
+         alert(this.state.helpText);
+      }      
    };
    
    checkForCorrectResult = () => {
@@ -93,6 +104,10 @@ class RazlikaZadatak1Screen1 extends Component {
          return;
       } else if (this.state.ballonClickedCount === this.state.correctResult) {
          alert('Bravo !!!');
+         setTimeout(() => {
+            this.init();
+            alert(this.state.taskText);
+         }, 2500);
       } else {
          alert('Not correct. Please, try again.');
       }
@@ -146,11 +161,6 @@ class RazlikaZadatak1Screen1 extends Component {
             source={backgroundImage}
             style={styles.backgroundImage}
          >
-            <View>
-               <Text style={{ textAlign: 'center', fontSize: 20 }}>
-                  {this.state.taskText}
-               </Text>
-            </View>
             <View style={[{ flex: 1 },
             this.state.viewMode === 'portrait' ?
                null :
@@ -160,7 +170,7 @@ class RazlikaZadatak1Screen1 extends Component {
                   { flexDirection: 'row', justifyContent: 'space-around', alignItems: 'center' } :
                   { flexDirection: 'column-reverse', justifyContent: 'space-around', alignItems: 'center' }
                }>
-                  <Btn color='blue' textColor='#fff' onPress={this.init}>Reset</Btn>
+                  <Btn color='blue' textColor='#fff' onPress={this.reset}>Reset</Btn>
                   <Text>Scoore: {this.state.ballonClickedCount}</Text>
                </View>
                <View style={styles.gameContainer}>

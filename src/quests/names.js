@@ -50,6 +50,16 @@ export const serbianNames = [
       lokat: 'Aci'
    }, 
    { 
+      male: true,
+      nomin: 'Boško',
+      genit: 'Boška',
+      dativ: 'Bošku',
+      akuz: 'Boška',
+      vokat: 'Boško',
+      instr: 'Boškom',
+      lokat: 'Bošku'
+   },
+   { 
       male: false,
       nomin: 'Vesna',
       genit: 'Vesne',
@@ -108,6 +118,16 @@ export const serbianNames = [
       vokat: 'Žarko',
       instr: 'Žarkom',
       lokat: 'Žarku'
+   },
+      { 
+      male: true,
+      nomin: 'Željko',
+      genit: 'Željka',
+      dativ: 'Željku',
+      akuz: 'Željka',
+      vokat: 'Željko',
+      instr: 'Željkom',
+      lokat: 'Željku'
    },
    { 
       male: true,
@@ -179,6 +199,16 @@ export const serbianNames = [
       instr: 'Martom',
       lokat: 'Marti'
    },
+      { 
+      male: true,
+      nomin: 'Milan',
+      genit: 'Milana',
+      dativ: 'Milanu',
+      akuz: 'Milana',
+      vokat: 'milane',
+      instr: 'Milanom',
+      lokat: 'Milanu'
+   },
    { 
       male: false,
       nomin: 'Milica',
@@ -229,6 +259,16 @@ export const serbianNames = [
       instr: 'Petrom',
       lokat: 'Petri'
    },
+      { 
+      male: false,
+      nomin: 'Radmila',
+      genit: 'Radmile',
+      dativ: 'Radmili',
+      akuz: 'Radmilu',
+      vokat: 'Radmila',
+      instr: 'Radmilom',
+      lokat: 'Radmili'
+   },
    { 
       male: false,
       nomin: 'Sara',
@@ -238,6 +278,16 @@ export const serbianNames = [
       vokat: 'Saro',
       instr: 'Sarom',
       lokat: 'Sari'
+   },
+      { 
+      male: false,
+      nomin: 'Sneža',
+      genit: 'Sneže',
+      dativ: 'Sneži',
+      akuz: 'Snežu',
+      vokat: 'Snežo',
+      instr: 'Snežom',
+      lokat: 'Sneži'
    },
    { 
       male: false,
@@ -269,7 +319,16 @@ export const serbianNames = [
       instr: 'Stefanom',
       lokat: 'Stefanu'
    }, 
-  
+     { 
+      male: true,
+      nomin: 'Uroš',
+      genit: 'Uroša',
+      dativ: 'Urošu',
+      akuz: 'Uroša',
+      vokat: 'Uroše',
+      instr: 'Urošem',
+      lokat: 'Urošu'
+   },
    { 
       male: true,
       nomin: 'Filip',
