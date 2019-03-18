@@ -7,11 +7,11 @@ import Icons from 'react-native-vector-icons/Ionicons';
 import { substractQuest1, addQuest1 } from '../../../../quests/textual1Level';
 import Btn from '../../.././../components/UI/buttons/ButtonWithBackground';
 import Ballon from '../../../../components/Ballon/ballon';
-import backgroundImage from '../../../../assets/images/poz_baloni1.png';
+import backgroundImage from '../../../../media/images/poz_baloni1.png';
 
-import blueBallonImage from '../../../../assets/images/bluebubble.png';
-import zvezdiceImage from '../../../../assets/images/zvezdice.png';
-import transparentImage from '../../../../assets/images/transparent.png';
+import blueBallonImage from '../../../../media/images/bluebubble.png';
+import zvezdiceImage from '../../../../media/images/zvezdice.png';
+import transparentImage from '../../../../media/images/transparent.png';
 
 
 class RazlikaZadatak1Screen1 extends Component {
