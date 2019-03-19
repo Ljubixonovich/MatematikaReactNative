@@ -4,7 +4,7 @@ import { View, Text, ImageBackground, StyleSheet, Dimensions } from 'react-nativ
 
 import Btn from '../../components/UI/buttons/ButtonWithBackground';
 import HeaderText from '../../components/UI/texts/headerText';
-import backgroundImage from '../../media/images/prviraz.png';
+import backgroundImage from '../../assets/images/prviraz.png';
 
 export default class WelcomeScreen extends Component {
    constructor(props) {
