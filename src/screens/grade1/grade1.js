@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, ScrollView, Dimensions } from 'react-native';
 
+import { colors } from '../../assets/index';
 import Btn from '../../components/UI/buttons/ButtonWithBackground';
 import HeaderText from '../../components/UI/texts/headerText';
 
@@ -56,37 +57,37 @@ export default class GradeScreen1 extends Component {
 
             <View>
                <Btn
-                  color='orange'
-                  textColor='#fff'
+                  color={colors.orange}
+                  textColor={colors.white}
                   onPress={this.goToNovac}
                >Novac
             </Btn>
 
                <Btn
-                  color='blue'
-                  textColor='#fff'
+                  color={colors.blue}
+                  textColor={colors.white}
                   onPress={this.goToRazlika}
                >Razlika
             </Btn>
 
                <Btn
-                  color='orange'
-                  textColor='#fff'
+                  color={colors.orange}
+                  textColor={colors.white}
                   onPress={this.goToNepoznatBroj}
                >Otkrivamo nepoznat broj
             </Btn>
 
                <Btn
-                  color='orange'
-                  textColor='#fff'
+                  color={colors.orange}
+                  textColor={colors.white}
                   onPress={this.metoda}
                   disabled={true}
                >4. Tip Igre
             </Btn>
 
                <Btn
-                  color='orange'
-                  textColor='#fff'
+                  color={colors.orange}
+                  textColor={colors.white}
                   onPress={this.metoda}
                   disabled={true}
                >5. Tip Igre koju igras

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import { View, Text, ImageBackground, StyleSheet, Dimensions } from 'react-native';
 
+import { colors } from '../../assets/index';
 import Btn from '../../components/UI/buttons/ButtonWithBackground';
 import HeaderText from '../../components/UI/texts/headerText';
 import backgroundImage from '../../assets/images/prviraz.png';
@@ -97,20 +98,20 @@ export default class WelcomeScreen extends Component {
                   justifyContent: 'space-between' }}
                >
                   <Btn
-                     color='blue'
-                     textColor='#fff'
+                     color={colors.blue}
+                     textColor={colors.white}
                      onPress={this.goToGrade1}
                   >1. Razred
                   </Btn>
                   <Btn
-                     color='red'
-                     textColor='#fff'
+                     color={colors.red}
+                     textColor={colors.white}
                      onPress={this.goToWork}
                   >Hey
                   </Btn>
                   <Btn
-                     color='blue'
-                     textColor='#fff'
+                     color={colors.blue}
+                     textColor={colors.white}
                      onPress={this.goToGrade4}
                   >4. Razred
                   </Btn>
@@ -121,14 +122,14 @@ export default class WelcomeScreen extends Component {
                   justifyContent: 'center' }}
                >
                   <Btn
-                     color='blue'
-                     textColor='#fff'
+                     color={colors.blue}
+                     textColor={colors.white}
                      onPress={this.goToGrade2}
                   >2. Razred
                   </Btn>
                   <Btn
-                     color='blue'
-                     textColor='#fff'
+                     color={colors.blue}
+                     textColor={colors.white}
                      onPress={this.goToGrade3}
                   >3. Razred
                   </Btn>

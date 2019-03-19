@@ -1,7 +1,8 @@
 import { Navigation } from 'react-native-navigation';
 import { Platform } from 'react-native';
-
 import Icon from 'react-native-vector-icons/Ionicons';
+
+import { fonts } from '../assets/index';
 
 
 const startMyApp = () => {
@@ -22,7 +23,7 @@ const startMyApp = () => {
          },
          appStyle: {
             navBarTitleTextCentered: true,
-            navBarTextFontFamily: 'KalamBold'
+            navBarTextFontFamily: fonts.bold
          }
       });
    });

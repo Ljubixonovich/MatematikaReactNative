@@ -8,6 +8,8 @@ import {
    Platform
 } from 'react-native';
 
+import { colors, fonts } from '../../../assets/index';
+
 const buttonWithBackground = props => {
    const content = (
       <View style={[
@@ -16,7 +18,7 @@ const buttonWithBackground = props => {
          props.disabled ? styles.disabled : null
       ]}>
          <Text style={[
-            { textAlign: 'center', fontSize: 20, color: props.textColor, fontFamily: 'KalamRegular' },
+            { textAlign: 'center', fontSize: 20, color: props.textColor, fontFamily: fonts.regular },
             props.disabled ? styles.disabledText : null]}
             adjustsFontSizeToFit={true}
          >{props.children}
@@ -52,18 +54,18 @@ const styles = StyleSheet.create({
       margin: 8,
       borderRadius: 8,
       borderWidth: 1,
-      borderColor: 'black',
+      borderColor: colors.black,
       opacity: 0.8,
       justifyContent: 'center',
       alignItems: 'center',
       height: 48,      
    },
    disabled: {
-      backgroundColor: '#eee',
-      borderColor: '#aaa'
+      backgroundColor: colors.lightGray,
+      borderColor: colors.gray
    },
    disabledText: {
-      color: '#aaa',
+      color: colors.gray,
    }
 });
 

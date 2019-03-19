@@ -4,6 +4,7 @@ import { StyleSheet, View, Text, ImageBackground, Dimensions, FlatList } from 'r
 import Sound from 'react-native-sound';
 import Icons from 'react-native-vector-icons/Ionicons';
 
+import { colors } from '../../../../assets/index';
 import { substractQuest1, addQuest1 } from '../../../../quests/textual1Level';
 import Btn from '../../.././../components/UI/buttons/ButtonWithBackground';
 import Ballon from '../../../../components/Ballon/ballon';
@@ -170,7 +171,7 @@ class RazlikaZadatak1Screen1 extends Component {
                   { flexDirection: 'row', justifyContent: 'space-around', alignItems: 'center' } :
                   { flexDirection: 'column-reverse', justifyContent: 'space-around', alignItems: 'center' }
                }>
-                  <Btn color='blue' textColor='#fff' onPress={this.reset}>Reset</Btn>
+                  <Btn color={colors.blue} textColor={colors.white} onPress={this.reset}>Reset</Btn>
                   <Text>Scoore: {this.state.ballonClickedCount}</Text>
                </View>
                <View style={styles.gameContainer}>

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, View, Text, ScrollView } from 'react-native';
 
+import { colors } from '../../../assets/index';
 import Btn from '../../../components/UI/buttons/ButtonWithBackground';
 import HeaderText from '../../../components/UI/texts/headerText';
 
@@ -29,30 +30,38 @@ export default class RazlikaScreen1 extends Component {
             </View>
             <View style={{flexDirection: 'row'}}>
                <View>
-                  <Btn color='blue' textColor='#fff' onPress={this.goToZadatak1}>
+                  <Btn color={colors.blue} textColor={colors.white} 
+                     onPress={this.goToZadatak1}>
                      1. Zadatak
                   </Btn>
-                  <Btn color='orange' textColor='#fff' onPress={this.toDo}>
+                  <Btn color={colors.orange} textColor={colors.white} 
+                     onPress={this.toDo}>
                      2. Zadatak
                   </Btn>
-                  <Btn color='orange' textColor='#fff' onPress={this.toDo}>
+                  <Btn color={colors.orange} textColor={colors.white} 
+                     onPress={this.toDo}>
                      3. Zadatak
                   </Btn>
-                  <Btn color='orange' textColor='#fff' onPress={this.toDo}>
+                  <Btn color={colors.orange} textColor={colors.white} 
+                     onPress={this.toDo}>
                      4. Zadatak
                   </Btn>
                </View>
                <View>
-                  <Btn color='orange' textColor='#fff' onPress={this.toDo}>
+                  <Btn color={colors.orange} textColor={colors.white} 
+                     onPress={this.toDo}>
                      5. Zadatak
                   </Btn>
-                  <Btn color='orange' textColor='#fff' onPress={this.toDo}>
+                  <Btn color={colors.orange} textColor={colors.white} 
+                     onPress={this.toDo}>
                      6. Zadatak
                   </Btn>
-                  <Btn color='orange' textColor='#fff' onPress={this.toDo}>
+                  <Btn color={colors.orange} textColor={colors.white} 
+                     onPress={this.toDo}>
                      7. Zadatak
                   </Btn>
-                  <Btn color='orange' textColor='#fff' onPress={this.toDo}>
+                  <Btn color={colors.orange} textColor={colors.white} 
+                     onPress={this.toDo}>
                      8. Zadatak
                   </Btn>
                </View>
