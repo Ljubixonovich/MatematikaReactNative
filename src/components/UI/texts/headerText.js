@@ -1,5 +1,5 @@
-import React from 'react'
-import { Text, StyleSheet } from 'react-native'
+import React from 'react';
+import { Text, StyleSheet } from 'react-native';
 
 const headerText = props => {
    return (
@@ -16,9 +16,9 @@ const headerText = props => {
 const styles = StyleSheet.create({
    headerText: {
       fontSize: 28,
-      fontWeight: 'bold',
       textAlign: 'center',
       color: 'blue',
+      fontFamily: 'KalamBold'
    }
 });
 

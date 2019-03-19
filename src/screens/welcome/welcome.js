@@ -71,7 +71,7 @@ export default class WelcomeScreen extends Component {
                 styles.landscapeHeader}
             >
                <HeaderText>
-                  Naucimo matematiku kroz igru i zabavu
+                  Naučimo matematiku kroz igru i zabavu
                </HeaderText>
             </View>
 

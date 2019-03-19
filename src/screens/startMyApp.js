@@ -21,7 +21,8 @@ const startMyApp = () => {
             }
          },
          appStyle: {
-            navBarTitleTextCentered: true
+            navBarTitleTextCentered: true,
+            navBarTextFontFamily: 'KalamBold'
          }
       });
    });

@@ -5,3 +5,9 @@ echo 'SUBSYSTEM=="usb", ATTR{idVendor}=="1bbb", MODE="0666", GROUP="plugdev"' | 
 adb devices
 
 react-native run-android
+
+
+
+to do: 
+   central place for fonts and colors,
+   index-files that call other files (add entry file)
