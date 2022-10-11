@@ -9,7 +9,7 @@
   "dependencies": {
     "prop-types": "^15.7.2",
     "react": "16.6.3",
-    "react-native": "^0.58.5",
+    "react-native": "^0.70.2",
     "react-native-navigation": "^1.1.493",
     "react-native-sound": "^0.10.12",
     "react-native-vector-icons": "^6.2.0",
